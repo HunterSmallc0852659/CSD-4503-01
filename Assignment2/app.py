@@ -1,6 +1,12 @@
 from flask import Flask, render_template
 # pip install pymongo
 from pymongo import MongoClient
+from dotenv import load_dotenv
+load_dotenv()
+
+import os
+MONGODB_USERNAME = os.getenv('MONGODB_USERNAME')
+MONGODB_PASSWORD = os.getenv('MONGODB_PASSWORD')
 
 #creates mongodb client
 client = MongoClient(
